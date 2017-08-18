@@ -1,0 +1,4 @@
+--- # Ansible Requirements
+- src: https://github.com/geerlingguy/ansible-role-docker
+  version: master
+  name: geerlingguy.docker

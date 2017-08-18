@@ -1,0 +1,82 @@
+--- # This playbook provision the Docker image
+- hosts: ubuntu
+  vars:
+    packer_ver: 1.0.4
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+    - name: Install needed packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - unzip
+        - sudo
+        - python-dev
+        - python-pip
+        - libssl-dev
+        - build-essential
+        - gcc
+        - git-core
+        - golang-go
+        - libcurl4-openssl-dev
+        - fakeroot
+        - ca-certificates
+        - tar
+        - gzip
+        - zip
+        - g++
+        - gcc
+        - imagemagick
+        - libpq-dev
+        - libreadline-dev
+        - wget
+        - curl
+        - openssh
+        - libmysqlclient-dev
+        - libsqlite3-dev
+        - dpkg
+        - nodejs
+        - ruby-full
+    - name: Download and unarchive Packer.
+      unarchive:
+        src: "https://releases.hashicorp.com/packer/{{ packer_ver }}/packer_{{ packer_ver }}_linux_amd64.zip"
+        dest: /usr/local/bin
+        remote_src: true
+        creates: /usr/local/bin/packer
+        validate_certs: no
+    - name: Make sure we have a 'wheel' group
+      group:
+        name: wheel
+        state: present
+    - name: Allow 'wheel' group to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+    - name: Create Ubuntu user
+      user:
+        name: ubuntu
+        state: present
+        groups: wheel, docker
+        append: yes
+        createhome: yes
+
+- hosts: ubuntu
+  become_user: ubuntu
+  tasks:
+    - name: Install pip packages
+      pip:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - pip
+        - awscli
+        - awsebcli
+        - ansible
+        - azure-cli
+        -
+  roles:
+    - role: geerlingguy.docker
