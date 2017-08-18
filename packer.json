@@ -58,8 +58,7 @@
       {
         "type": "docker-tag",
         "repository": "ericovis/ubuntu",
-        "tag": "{{ user `release_ver` }}",
-        "only": ["docker-ubuntu"]
+        "tag": "{{ user `release_ver` }}"
       },
       {
         "type": "docker-push",

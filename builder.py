@@ -27,7 +27,7 @@ elif 'release/' in branch:
     args = packer_args("-except=testing")
 else:
     args = packer_args("-only=testing")
-    os.environ['RELEASE_VER'] = ""
+    os.environ['RELEASE_VER'] = "alpha"
 
 print("Packer cmd: " + " ".join(args))
 print("Version: {}".format(os.environ['RELEASE_VER']))
