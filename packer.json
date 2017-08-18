@@ -29,6 +29,13 @@
       "commit": true,
       "author": "{{ user `EMAIL` }}",
       "changes":[
+        "LABEL version={{ user `release_ver` }}",
+        "LABEL maintainer='{{ user `EMAIL` }}'",
+        "LABEL description='Ubuntu image with DevOps tools.'",
+        "USER ubuntu",
+        "ENV USER ubuntu",
+        "VOLUME /var/lib/docker",
+        "VOLUME /home/ubuntu"
       ]
     }
   ],

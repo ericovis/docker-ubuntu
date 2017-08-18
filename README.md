@@ -45,7 +45,10 @@ docker run ericovis/ubuntu <some command>
 
 - /home/ubuntu
 
+## License
 
-MIT [License](/LICENSE).
+MIT License. Check it[here](/LICENSE).
 
-Created by [Eric Magalhães](https://emagalha.es).
+### Copyright
+
+[Eric Magalhães](https://emagalha.es).
