@@ -48,7 +48,7 @@ docker run ericovis/ubuntu <some command>
 
 ## License
 
-MIT License. Check it[here](/LICENSE).
+MIT License. Full document [here](/LICENSE).
 
 ### Copyright
 
