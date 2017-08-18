@@ -15,6 +15,7 @@ Ubuntu image with DevOps tools.
 - Packer
 - Ansible
 - Docker (with docker-compose)
+- Git
 - AWS CLI
 - AWS EB CLI
 - Azure CLI

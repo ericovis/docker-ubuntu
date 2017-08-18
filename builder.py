@@ -19,6 +19,9 @@ branch = os.getenv('TRAVIS_BRANCH', '')
 if branch == 'master':
     os.environ['RELEASE_VER'] = "latest"
     args = packer_args("-except=testing")
+elif branch == 'develop':
+    os.environ['RELEASE_VER'] = "beta"
+    args = packer_args("-except=testing")
 elif 'release/' in branch:
     os.environ['RELEASE_VER'] = branch.replace('release/', '')
     args = packer_args("-except=testing")
