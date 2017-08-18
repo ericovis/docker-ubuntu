@@ -20,11 +20,11 @@ Ubuntu image with DevOps tools.
 - AWS EB CLI
 - Azure CLI
 
-## Available at
+### Available at
 
 - [Docker Hub](https://hub.docker.com/r/ericovis/ubuntu/)
 
-### Docker image
+## Docker image
 
 To get this image:
 ~~~
@@ -44,6 +44,7 @@ docker run ericovis/ubuntu <some command>
 #### Workdir
 
 - /home/ubuntu
+
 
 ## License
 
