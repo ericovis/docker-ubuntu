@@ -38,6 +38,7 @@ To get this image:
 ~~~
 docker pull ericovis/ubuntu
 ~~~
+Check out Docker hub for [available tags](https://hub.docker.com/r/ericovis/ubuntu/tags/).
 
 To run commands in the container:
 ~~~
