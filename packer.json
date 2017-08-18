@@ -19,7 +19,9 @@
         "USER ubuntu",
         "ENV USER ubuntu",
         "VOLUME /var/lib/docker",
-        "VOLUME /home/ubuntu"
+        "VOLUME /home/ubuntu",
+        "WORKDIR /home/ubuntu",
+        "ENTRYPOINT [\"sudo\", \"chown\", \"-R\", \"ubuntu:ubuntu\", \"/var/run/docker.sock\"]"
       ]
     },
     {
@@ -29,6 +31,15 @@
       "commit": true,
       "author": "{{ user `EMAIL` }}",
       "changes":[
+        "LABEL version={{ user `release_ver` }}",
+        "LABEL maintainer='{{ user `EMAIL` }}'",
+        "LABEL description='Ubuntu image with DevOps tools.'",
+        "USER ubuntu",
+        "ENV USER ubuntu",
+        "VOLUME /var/lib/docker",
+        "VOLUME /home/ubuntu",
+        "WORKDIR /home/ubuntu",
+        "ENTRYPOINT [\"sudo\", \"chown\", \"-R\", \"ubuntu:ubuntu\", \"/var/run/docker.sock\"]"
       ]
     }
   ],
@@ -58,8 +69,7 @@
       {
         "type": "docker-tag",
         "repository": "ericovis/ubuntu",
-        "tag": "{{ user `release_ver` }}",
-        "only": ["docker-ubuntu"]
+        "tag": "{{ user `release_ver` }}"
       },
       {
         "type": "docker-push",
