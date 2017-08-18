@@ -19,7 +19,8 @@
         "USER ubuntu",
         "ENV USER ubuntu",
         "VOLUME /var/lib/docker",
-        "VOLUME /home/ubuntu"
+        "VOLUME /home/ubuntu",
+        "WORKDIR /home/ubuntu"
       ]
     },
     {
@@ -35,7 +36,8 @@
         "USER ubuntu",
         "ENV USER ubuntu",
         "VOLUME /var/lib/docker",
-        "VOLUME /home/ubuntu"
+        "VOLUME /home/ubuntu",
+        "WORKDIR /home/ubuntu"
       ]
     }
   ],
