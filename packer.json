@@ -20,7 +20,8 @@
         "ENV USER ubuntu",
         "VOLUME /var/lib/docker",
         "VOLUME /home/ubuntu",
-        "WORKDIR /home/ubuntu"
+        "WORKDIR /home/ubuntu",
+        "ENTRYPOINT [\"sudo\", \"chown\", \"-R\", \"ubuntu:ubuntu\", \"/var/run/docker.sock\"]"
       ]
     },
     {
@@ -37,7 +38,8 @@
         "ENV USER ubuntu",
         "VOLUME /var/lib/docker",
         "VOLUME /home/ubuntu",
-        "WORKDIR /home/ubuntu"
+        "WORKDIR /home/ubuntu",
+        "ENTRYPOINT [\"sudo\", \"chown\", \"-R\", \"ubuntu:ubuntu\", \"/var/run/docker.sock\"]"
       ]
     }
   ],
