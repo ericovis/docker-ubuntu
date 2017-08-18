@@ -33,7 +33,7 @@
         - libreadline-dev
         - wget
         - curl
-        - openssh
+        - openssh-server
         - libmysqlclient-dev
         - libsqlite3-dev
         - dpkg
