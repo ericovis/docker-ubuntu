@@ -60,7 +60,7 @@
       user:
         name: ubuntu
         state: present
-        groups: wheel, docker
+        groups: wheel
         append: yes
         createhome: yes
 
