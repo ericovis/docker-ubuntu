@@ -77,5 +77,6 @@
         - awsebcli
         - ansible
         - azure-cli
+        - virtualenv
   roles:
     - role: geerlingguy.docker
