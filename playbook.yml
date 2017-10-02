@@ -1,7 +1,7 @@
 --- # This playbook provision the Docker image
 - hosts: ubuntu
   vars:
-    packer_ver: 1.0.4
+    packer_ver: 1.1.0
   tasks:
     - name: Update apt cache
       apt:

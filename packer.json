@@ -21,7 +21,8 @@
         "VOLUME /var/lib/docker",
         "VOLUME /home/ubuntu",
         "WORKDIR /home/ubuntu",
-        "ENTRYPOINT [\"sudo\", \"chown\", \"-R\", \"ubuntu:ubuntu\", \"/var/run/docker.sock\", \"&&\"]"
+        "RUN sudo chwon -R ubuntu:ubuntu /var/run/docker.sock",
+        "ENTRYPOINT [\"/bin/bash\"]"
       ]
     },
     {
@@ -39,7 +40,8 @@
         "VOLUME /var/lib/docker",
         "VOLUME /home/ubuntu",
         "WORKDIR /home/ubuntu",
-        "ENTRYPOINT [\"sudo\", \"chown\", \"-R\", \"ubuntu:ubuntu\", \"/var/run/docker.sock\", \"&&\"]"
+        "RUN sudo chwon -R ubuntu:ubuntu /var/run/docker.sock",
+        "ENTRYPOINT [\"/bin/bash\"]"
       ]
     }
   ],
