@@ -18,8 +18,8 @@ before_script:
   - sudo apt-get install -y golang-go libssl-dev git-core python python-apt wget unzip
   - pip install -r requirements.txt
   - ansible-galaxy install -r requirements.yml -p roles
-  - wget "https://releases.hashicorp.com/packer/$PACKER_VER/packer_$PACKER_VER_linux_amd64.zip"
-  - sudo unzip "packer_$PACKER_VER_linux_amd64.zip" -d /usr/local/bin
+  - wget https://releases.hashicorp.com/packer/"$PACKER_VER"/packer_"$PACKER_VER"_linux_amd64.zip
+  - sudo unzip packer_"$PACKER_VER"_linux_amd64.zip -d /usr/local/bin
   - echo "Branch -> $TRAVIS_BRANCH"
   - packer --version
   - ansible --version
