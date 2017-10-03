@@ -40,17 +40,24 @@
         "VOLUME /var/lib/docker",
         "VOLUME /home/ubuntu",
         "WORKDIR /home/ubuntu",
-        "RUN sudo chwon -R ubuntu:ubuntu /var/run/docker.sock",
-        "ENTRYPOINT [\"/bin/bash\"]"
+        "RUN ",
+        "ENTRYPOINT [\"/start.sh\"]"
       ]
     }
   ],
   "provisioners": [
     {
+      "type": "file",
+      "source": "./start.sh",
+      "destination": "/tmp/start.sh"
+    },
+    {
       "type": "shell",
       "inline": [
         "apt-get update",
-        "apt-get install -y python"
+        "apt-get install -y python",
+        "mv /tmp/start.sh /start.sh",
+        "chmod 0755 /start.sh"        
       ]
     },
     {
