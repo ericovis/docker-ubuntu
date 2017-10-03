@@ -47,14 +47,12 @@ docker run ericovis/ubuntu <some command>
 
 Running container inside the container (Requires Docker installed on host):
 ~~~
-docker run ericovis/ubuntu -v /var/run/docker.sock:/var/run/docker.sock \
-    docker run hello-world
+docker run ericovis/ubuntu docker run hello-world
 ~~~
 
 #### Volumes
 
 - /var/lib/docker
-- /var/run/docker.sock
 - /home/ubuntu
 
 #### Workdir

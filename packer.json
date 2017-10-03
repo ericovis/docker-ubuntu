@@ -19,7 +19,6 @@
         "USER ubuntu",
         "ENV USER ubuntu",
         "VOLUME /usr/lib/docker",
-        "VOLUME /var/run/docker.sock",
         "VOLUME /home/ubuntu",
         "WORKDIR /home/ubuntu",
         "ENTRYPOINT [\"/start.sh\"]"
@@ -38,7 +37,6 @@
         "USER ubuntu",
         "ENV USER ubuntu",
         "VOLUME /usr/lib/docker",
-        "VOLUME /var/run/docker.sock",
         "VOLUME /home/ubuntu",
         "WORKDIR /home/ubuntu",
         "ENTRYPOINT [\"/start.sh\"]"
