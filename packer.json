@@ -18,7 +18,7 @@
         "LABEL description='Ubuntu image with DevOps tools.'",
         "USER ubuntu",
         "ENV USER ubuntu",
-        "VOLUME /var/run/docker.sock",
+        "VOLUME /usr/lib/docker",
         "VOLUME /home/ubuntu",
         "WORKDIR /home/ubuntu",
         "ENTRYPOINT [\"/start.sh\"]"
@@ -36,7 +36,7 @@
         "LABEL description='Ubuntu image with DevOps tools.'",
         "USER ubuntu",
         "ENV USER ubuntu",
-        "VOLUME /var/run/docker.sock",
+        "VOLUME /usr/lib/docker",
         "VOLUME /home/ubuntu",
         "WORKDIR /home/ubuntu",
         "ENTRYPOINT [\"/start.sh\"]"

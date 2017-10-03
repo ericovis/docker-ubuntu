@@ -78,5 +78,7 @@
         - ansible
         - azure-cli
         - virtualenv
+        - docker-compose
   roles:
     - role: geerlingguy.docker
+      docker_install_compose: false
